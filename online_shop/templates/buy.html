@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
+<link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
+<html>
+    <body>
+        <div class="topnav">
+            <a href="/"><h1>Online Shop</h1></a>
+            <a href="/">Home</a>
+            <a class="active" href="/buy">Buy</a>
+            <a href="/news">News</a>
+            <a href="/contact">Contact us</a>
+            <a href="/about">About</a>
+        </div>
+        <p>This is the site you need !</p>
+        <div class="botnav">
+            <p>Made by Sacha Tardat</p>
+            <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
+            <p>©Sacha Tardat, 15 yo</p>
+          </div>
+    </body>
+</html>

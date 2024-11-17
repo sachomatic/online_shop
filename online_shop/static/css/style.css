@@ -1,0 +1,132 @@
+h1{
+    font-family:'Comic Sans MS',sans-serif;
+    color:white
+}
+
+p{
+    color:white;
+    font-family:'Comic Sans MS',sans-serif;
+    font-size: 20;
+    border: 5px black;
+    padding: 5px;
+}
+
+button {
+  background-color: aqua;
+  border-radius: 9px; /* Adjust the value for the desired roundness */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better appearance */
+  font-family: 'Comic Sans MS',sans-serif;
+  font-size: 20px;
+}
+
+label {
+  color: white;
+  font-family:'Comic Sans MS',sans-serif;
+}
+
+input {
+  border-radius: 8px;
+}
+
+textarea {
+  border-radius: 15px;
+}
+
+html{
+    background-color: grey;
+}
+
+a{
+    font-family:'Comic Sans MS',sans-serif;
+    display: block;
+    color:brown;
+    padding:5px
+}
+
+a:active,a:hover,a:focus{
+    display: block;
+    color: aquamarine;
+}
+
+.info {
+  background-color: skyblue;
+  border-left: 6px lightblue;
+  color: black; /* Ensure text color is explicitly set */
+  padding-right: 10px; /* Optional: Add some padding for better spacing */
+}
+
+.info p, .info strong {
+  color: black; /* Ensure child elements have consistent color */
+}
+
+.info strong {
+  padding-right: 10px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color:white;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better appearance */
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Align items horizontally in the center */
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a{
+    float: left;
+    color: brown;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .topnav h1{
+    margin-right: auto; /* Pushes the heading to the left */
+    padding-right: 30px;
+    color:black
+  }
+
+  .topnav a h1{
+    display: inline;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    color: cyan;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 10px; /* Adjust the value for the desired roundness */
+  }
+
+.botnav {
+  background-color: white;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  
+}
+
+  .botnav a{
+    display: inline;
+    color : blue
+  }
+
+  .botnav a:hover,a:focus{
+    display: inline;
+    color : skyblue
+  }
+
+  .botnav p{
+    display: inline;
+    color:black
+  }
