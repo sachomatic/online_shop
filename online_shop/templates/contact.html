@@ -2,6 +2,10 @@
 {% load static %}
 <!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
 <link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
+<head>
+  <title>Online shop - contact us</title>
+</head>
 <html>
     <body>
         <div class="topnav">
@@ -26,12 +30,28 @@
             <div class="info">
                 <p><strong>Note</strong>If your text is inappropriate, we can and will look who is the sender.</p>
             </div>  
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" onclick="">
             <div class="botnav">
                 <p>Made by Sacha Tardat</p>
                 <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
                 <p>©Sacha Tardat, 15 yo</p>
               </div>
         </form>
+        <script>
+        function sendEmail() {
+            Email.send({
+                Host: "127.0.0.0",
+                Username: document.getElementById('name').value,
+                Password: None,
+                To: 'sacha.tardar@gmail.com',
+                From: "sender@example.com",
+                Subject: "Test Email",
+                Body: "This is a test email sent using SMTP.js"
+            })
+            .then(function (message) {
+                alert("Mail sent successfully") // Alert message on successful email delivery
+            });
+        }
+        </script>
     </body>
 </html>

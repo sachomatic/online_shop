@@ -39,13 +39,13 @@ html{
 a{
     font-family:'Comic Sans MS',sans-serif;
     display: block;
-    color:brown;
+    color:blue;
     padding:5px
 }
 
 a:active,a:hover,a:focus{
     display: block;
-    color: aquamarine;
+    color: cyan;
 }
 
 .info {
