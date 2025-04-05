@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Online shop - home</title>
+    <title>Online shop - administration</title>
     {% load static %}
     <!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
     <script src="{% static 'js/main.js' %}"></script>
   </head>
-  <body> 
-    <div class="topnav"></div>
-    <div class="botnav"></div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        topnav();
-        botnav();
-      });
-    </script>
-  </body> 
+<html>
+     <body> 
+      <div class="topnav"></div>
+      
+      <h1>Control panel</h1>
+
+      <div class="botnav"></div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          topnav();
+          botnav();
+        });
+      </script>
+    </body> 
 </html> 

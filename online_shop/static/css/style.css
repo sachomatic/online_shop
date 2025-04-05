@@ -1,4 +1,4 @@
-h1{
+h1, h2, h3, h4{
     font-family:'Comic Sans MS',sans-serif;
     color:white
 }
@@ -9,27 +9,6 @@ p{
     font-size: 20;
     border: 5px black;
     padding: 5px;
-}
-
-button {
-  background-color: aqua;
-  border-radius: 9px; /* Adjust the value for the desired roundness */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better appearance */
-  font-family: 'Comic Sans MS',sans-serif;
-  font-size: 20px;
-}
-
-label {
-  color: white;
-  font-family:'Comic Sans MS',sans-serif;
-}
-
-input {
-  border-radius: 8px;
-}
-
-textarea {
-  border-radius: 15px;
 }
 
 html{
@@ -48,11 +27,61 @@ a:active,a:hover,a:focus{
     color: cyan;
 }
 
+button {
+  border: 2px solid #04AA6D;
+  background-color: #04AA6D;
+  color: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  
+  cursor: pointer;
+  transition-duration: 0.2s;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 7px; /* Adjust the value for the desired roundness */
+  
+  font-family: 'Comic Sans MS',sans-serif;
+  font-size: 20px;
+}
+
+button:hover {
+  border: 2px solid #0eba7a;
+  background-color: #0eba7a;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.warning {
+  margin: 0;
+  padding: 2px 0;
+  border-radius: 6px;
+  display: inline-block;
+
+  background-color:red;
+  color: #333;
+  border-left: 4px solid #ff584f;
+
+  margin-left: 5px;
+  padding-left:5px;
+  padding-right:5px;
+
+  font-family: 'Comic Sans MS',sans-serif; 
+}
+
 .info {
-  background-color: skyblue;
-  border-left: 6px lightblue;
-  color: black; /* Ensure text color is explicitly set */
-  padding-right: 10px; /* Optional: Add some padding for better spacing */
+  display: inline-block;
+  background-color: #e0f7ff; /* softer sky blue */
+  border-left: 6px solid #00bcd4; /* vibrant blue */
+  color: #333;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-family:'Comic Sans MS',sans-serif;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .info p, .info strong {
@@ -61,6 +90,7 @@ a:active,a:hover,a:focus{
 
 .info strong {
   padding-right: 10px;
+  border-radius: 10px;
 }
 
 /* Add a black background color to the top navigation */
@@ -106,6 +136,10 @@ a:active,a:hover,a:focus{
     border-radius: 10px; /* Adjust the value for the desired roundness */
   }
 
+  .topnav img{
+    float: right;
+  }
+
 .botnav {
   background-color: white;
   overflow: hidden;
@@ -130,3 +164,294 @@ a:active,a:hover,a:focus{
     display: inline;
     color:black
   }
+
+  /*Tables*/
+.news {
+  width: 100%;
+  font-family:'Comic Sans MS',sans-serif;
+  border-collapse: collapse;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.news .first_row{
+  border-right:1px solid white;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.news th{
+  border-right:1px solid white;
+}
+
+.news td,th {
+  text-align: center;
+  padding:15px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+.box {
+  flex: 1; /* Adjusts to take a fifth of the container */
+  max-width: 20%; /* Ensures no more than 20% width */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.box body {
+  margin: 0;
+  padding: 0;
+  font-family:'Comic Sans MS',sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box-container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 20px;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.box h2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: black;
+}
+
+.box p {
+  font-size: 1rem;
+  color: #333;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+
+@media (max-width: 768px) {
+  .box {
+      flex: 1 1 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+      flex: 1 1 calc(100% - 10px);
+  }
+}
+
+.container {
+  font-family:'Comic Sans MS',sans-serif;
+  display: block;
+  position: relative;
+  padding-top:10px;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.anonymouscheck {
+  transition-duration: 0.2s;
+  position: absolute;
+  top: 25;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.container:hover input ~ .anonymouscheck {
+  background-color: lightgray;
+}
+
+.container input:checked ~ .anonymouscheck {
+  background-color: #04AA6D;
+}
+
+.container input:checked ~ .anonymouscheck::after {
+  display: block;
+}
+
+.anonymouscheck::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+#success-message {
+  background-color: #009e25; /* green */
+  border-left: 6px solid #76fb83; /* light green */
+  color: #333;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-family:'Comic Sans MS',sans-serif;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.contactform {
+  font-family: 'Comic Sans MS', sans-serif;
+  display: block;
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  user-select: none;
+  top: 20px;
+  padding-bottom: 20px;
+  border: 10px solid rgb(110, 110, 110);
+  border-radius: 50px;
+  background-color: rgb(110, 110, 110);
+  width: 50%;
+  margin: 0 auto;  /* Center the form horizontally */
+}
+
+.contactform input {
+  transition-duration: 0.2s;
+  background-color: transparent;
+  padding: 10px;  /* Increased padding to make inputs more spacious */
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 4px;
+}
+
+.contactform input[type="text"]:focus {
+  border-bottom: 2px solid #04AA6D;
+  outline: none;
+}
+
+.contactform textarea {
+  transition-duration: 0.2s;
+  background-color: transparent;
+  padding: 10px;  /* Increased padding to make inputs more spacious */
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.contactform textarea:focus {
+  border: 2px solid #04AA6D;
+  outline: none;
+}
+
+.custom-details {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 50%;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin: 1rem auto;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.1s ease;
+
+  /* Prevent annoying text selection */
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+}
+
+.custom-details[open] {
+  background-color: #f0f8ff;
+  border-color: #3399ff;
+}
+
+.custom-details summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.custom-details h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #0055aa;
+  transition: color 0.3s;
+}
+
+.custom-details p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.loginform {
+  font-family: 'Comic Sans MS', sans-serif;
+  display: block;
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  user-select: none;
+  top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  margin: 0 auto;  /* Center the form horizontally */
+}
+
+.loginform input {
+  transition-duration: 0.2s;
+  background-color: transparent;
+  padding: 10px;  /* Increased padding to make inputs more spacious */
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 4px;
+}
+
+.loginform input[type="text"]:focus {
+  border-bottom: 2px solid #04AA6D;
+  outline: none;
+}

@@ -1,57 +1,38 @@
 <!DOCTYPE html>
-{% load static %}
-<!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
-<link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
-<head>
-  <title>Online shop - contact us</title>
-</head>
 <html>
+  <head>
+    <title>Online shop - contact us</title>
+    {% load static %}
+    <!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
     <body>
-        <div class="topnav">
-            <a href="/"><h1>Online Shop</h1></a>
-            <a href="/">Home</a>
-            <a href="/buy">Buy</a>
-            <a href="/news">News</a>
-            <a class="active" href="/contact">Contact us</a>
-            <a href="/about">About</a>
-        </div>
-        <form>
+        <div class="topnav"></div>
+
+        <form class="contactform">
             <label for="name">Name</label><br>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name" maxlength=30><br>
             <label for="obj">Object</label><br>
-            <input type="text" id="obj" name="obj"><br>
+            <input type="text" id="obj" name="obj" maxlength=50><br>
             <label for="fulltext">Text</label><br>
-            <textarea id="fulltext" name="fulltext" rows="10"></textarea><br>
-            <label for="anonymouscheck">
-                <input type="checkbox" id="anonymouscheck" name="anonymouscheck" value="Send an anonymous report">
-                Send an anonymous report
-              </label>
-            <div class="info">
-                <p><strong>Note</strong>If your text is inappropriate, we can and will look who is the sender.</p>
-            </div>  
-            <input type="submit" value="Submit" onclick="">
-            <div class="botnav">
-                <p>Made by Sacha Tardat</p>
-                <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
-                <p>©Sacha Tardat, 15 yo</p>
-              </div>
+            <textarea id="fulltext" name="fulltext" rows="10" maxlength=1000></textarea><br>
+            <div><label class="container">Send anonymously
+                  <input type="checkbox" id="anonymouscheck">
+                  <span class="anonymouscheck"></span>
+            </label></div>
+            <div><span class="info">If the message is inappropriate, we can and will track it</span></div>
+            <button type="button" onclick="sendMessage()">Submit</button>
         </form>
+
+        <div class="botnav"></div>
+
         <script>
-        function sendEmail() {
-            Email.send({
-                Host: "127.0.0.0",
-                Username: document.getElementById('name').value,
-                Password: None,
-                To: 'sacha.tardar@gmail.com',
-                From: "sender@example.com",
-                Subject: "Test Email",
-                Body: "This is a test email sent using SMTP.js"
-            })
-            .then(function (message) {
-                alert("Mail sent successfully") // Alert message on successful email delivery
+            document.addEventListener("DOMContentLoaded", function () {
+                topnav();
+                botnav();
             });
-        }
         </script>
     </body>
 </html>

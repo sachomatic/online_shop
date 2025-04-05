@@ -1,26 +1,43 @@
-<!DOCTYPE html> 
-{% load static %}
-<!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
-<link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
-<head>
-  <title>Online shop - latest news</title>
-</head>
+<!DOCTYPE html>
 <html>
-    <body>
-        <div class="topnav">
-            <a href="/"><h1>Online Shop</h1></a>
-            <a href="/">Home</a>
-            <a href="/buy">Buy</a>
-            <a class="active" href="/news">News</a>
-            <a href="/contact">Contact us</a>
-            <a href="/about">About</a>
-        </div>
-        <p>This site was created on a Saturday before a party</p>
-        <div class="botnav">
-            <p>Made by Sacha Tardat</p>
-            <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
-            <p>©Sacha Tardat, 15 yo</p>
-          </div>
-    </body>
+  <head>
+    <title>Online shop - home</title>
+    {% load static %}
+    <!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
+  <body>
+    <div class="topnav"></div>
+
+    <p>This site was created on a Saturday before a party</p>
+    <table class="news">
+      <tbody>
+        <tr>
+          <th class="first_row">Title</th>
+          <th class="first_row">Text</th>
+          <th class="first_row">Date</th>
+          <th class="first_row">Author</th>
+        </tr>
+        {% for new in news %}
+        <tr>
+            <th>{{ new.news_title }}</th>
+            <td>{{ new.text }}</td>
+            <td>{{ new.date }}</td>
+            <td>From {{ new.author }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="botnav"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        topnav();
+        botnav();
+      });
+    </script>
+  </body>
 </html>

@@ -13,3 +13,14 @@ class News(models.Model):
     text = models.TextField()
     date = models.DateField()
     author = models.TextField(max_length=10)
+
+class User(models.Model):
+    username = models.CharField(max_length=10)
+    password = models.CharField(max_length=15)
+    admin = models.BooleanField(default=False)
+
+class Message(models.Model):
+    sender = models.CharField(max_length=30)
+    object = models.CharField(max_length=50)
+    text = models.CharField(max_length=1000)
+    anonymous = models.BooleanField(default=False)

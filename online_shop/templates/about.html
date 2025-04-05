@@ -1,29 +1,25 @@
-<!DOCTYPE html> 
-{% load static %}
-<!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
-<link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
-<head>
-  <title>Online shop - about</title>
-</head>
+<!DOCTYPE html>
 <html>
-     <body> 
-        <div class="topnav">
-          <a href="/"><h1>Online Shop</h1></a>
-          <a href="/">Home</a>
-          <a href="/buy">Buy</a>
-          <a href="/news">News</a>
-          <a href="/contact">Contact us</a>
-          <a class="active"  href="/about">About</a>
-          </div>
-        <h1>Online shop</h1>
-        <p>This site is a creation from Sacha Tardat, member of a online course named DigiActivity. It's a course to learn python, and once came the time where they encountered Django. I, alias Sacha, did not know anything about html, css or javascript, 
-            and it was a completely new world to me. It was fascinating all the possibilities! Of course, python is great, simple and all, but when it comes to the interface, python is super lame. Going from terminal to website is something! 
-            Anyway, I created this website at 15yo, and boy was it a hassle to learn html and css. It's so different, especially the syntax. But here I am.</p>
-        <div class="botnav">
-          <p>Made by Sacha Tardat</p>
-          <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
-          <p>©Sacha Tardat, 15 yo</p>
-        </div>
+  <head>
+    <title>Online shop - about</title>
+    {% load static %}
+    <!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
+    <body> 
+      <div class="topnav"></div>
+      <h1>Online shop</h1>
+      <p>This site is a creation from Sacha Tardat, member of a online course named DigiActivity. It's a course to learn python, and once came the time where they encountered Django. I, alias Sacha, did not know anything about html, css or javascript, 
+          and it was a completely new world to me. It was fascinating all the possibilities! Of course, python is great, simple and all, but when it comes to the interface, python is super lame. Going from terminal to website is something! 
+          Anyway, I created this website at 15yo, and boy was it a hassle to learn html and css. It's so different, especially the syntax. But here I am.</p>
+      <div class="botnav"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          topnav();
+          botnav();
+        });
+      </script>
     </body> 
 </html> 

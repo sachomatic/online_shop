@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-{% load static %}
-<!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
-<link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
-<head>
-  <title>Online shop - buy</title>
-</head>
 <html>
-    <body>
-        <div class="topnav">
-            <a href="/"><h1>Online Shop</h1></a>
-            <a href="/">Home</a>
-            <a class="active" href="/buy">Buy</a>
-            <a href="/news">News</a>
-            <a href="/contact">Contact us</a>
-            <a href="/about">About</a>
-        </div>
-        <p>This is the site you need !</p>
-        <div class="botnav">
-            <p>Made by Sacha Tardat</p>
-            <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
-            <p>©Sacha Tardat, 15 yo</p>
-          </div>
-    </body>
+  <head>
+    <title>Online shop - home</title>
+    {% load static %}
+    <!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
+  <body>
+    <div class="topnav"></div>
+
+    <p>This is the site you need !</p>
+    <div id="items-container">
+      {% for item in items %}
+        <div class="item" data-name="{{ item.item_name }}" data-price="{{ item.price }}" data-image="{{ item.item_image }}"></div>
+      {% endfor %}
+    </div>
+
+    <div class="botnav"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        topnav();
+        botnav();
+        document.querySelectorAll(".item").forEach(item => {
+          let name = item.getAttribute("data-name");
+          let price = item.getAttribute("data-price");
+          let image = item.getAttribute("data-image");
+          console.log("Item name:", name);
+          box(name, image, price);
+        });
+      });
+    </script>
+  </body>
 </html>

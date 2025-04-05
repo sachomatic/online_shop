@@ -17,7 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "online_shop\static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, r"online_shop\static")]
 
 # Où Django collectera tous les fichiers statiques
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")

@@ -1,27 +1,26 @@
-<!DOCTYPE html> 
-{% load static %}
-<!--Replace by <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> once development is done-->
-<link rel="stylesheet" href="/static/css/style.css?{% now "U" %}"/>
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
-<head>
-  <title>Online shop - home</title>
-</head>
+<!DOCTYPE html>
 <html>
-     <body> 
-        <div class="topnav">
-          <a href="/"><h1>Online Shop</h1></a>
-          <a class="active" href="/">Home</a>
-          <a href="/buy">Buy</a>
-          <a href="/news">News</a>
-          <a href="/contact">Contact us</a>
-          <a href="/about">About</a>
-          </div>
-        <p>This is just the beginning</p> 
-        <button class="button">Click me</button>
-        <div class="botnav">
-          <p>Made by Sacha Tardat</p>
-          <a href="https://github.com/sachomatic" target="_blank">See my GitHub</a>
-          <p>©Sacha Tardat, 15 yo</p>
-        </div>
-    </body> 
-</html> 
+  <head>
+    <title>Online shop - home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
+  <body>
+    <div class="topnav"></div>
+
+    <h2>Welcome on Online Shop</h2> 
+    <p>This site is made for buying your everyday needs online, without having to even move an inch from your home.</p>
+    <button class="button">Click me</button>
+
+    <div class="botnav"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        topnav();
+        botnav();
+      });
+    </script>
+  </body>
+</html>
