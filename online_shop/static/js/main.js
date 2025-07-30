@@ -100,6 +100,9 @@ function getCookie(name) {
 
 document.addEventListener("DOMContentLoaded", () => {
   function box(name, image, price) {
+      if (image=="none") {
+        image="/static/images/not_found.png"
+      }
       const container = document.getElementById("items-container");
       const box_html = document.createElement("div");
       box_html.classList.add("box");
@@ -107,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${image}" alt="${name}">
           <h2>${name}</h2>
           <p class="price">${price}€</p>
+          <button>Buy</button>
       `;
       container.appendChild(box_html);
   }

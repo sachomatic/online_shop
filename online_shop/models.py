@@ -7,6 +7,7 @@ class Item(models.Model):
     tag = models.IntegerField()
     availability = models.BooleanField()
     description = models.CharField(max_length=255)
+    image_url = models.CharField(max_length=255,default="none",null=True, blank=True)
 
 class News(models.Model):
     news_title = models.TextField(max_length=20)
